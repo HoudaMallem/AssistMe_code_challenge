@@ -1,0 +1,527 @@
+openapi: 3.0.3
+info:
+  title: AssistMe code challenge
+  description: This is the openapi doc for AssistMe code challenge Rest api
+  contact:
+    email: houda.mallem@gmail.com
+  version: v1
+
+servers:
+  - url: http://localhost:8001/api/v1
+
+paths:
+  /companies/:
+  
+    get:
+      tags:
+        - companies
+      description : Get all companies 
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Companies'          
+    post:
+      tags:
+        - companies
+      summary: Create a company 
+      description: Create a company 
+      requestBody:
+        description: Create a company 
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompanyRequest'
+        required: true
+      responses:
+        '201':
+          description: Companay has been created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompanyResponse'          
+        '400':
+          description: bad request 
+          
+
+  /companies/{IdCompany}/:
+    get:
+      tags:
+        - companies
+      description: get one company by id
+      parameters:
+        - name: IdCompany
+          in: path
+          description: ID of company to return
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompanyResponse'          
+        '400':
+          description: bad request 
+        '404':
+          description: not found
+    delete:
+      tags:
+        - companies
+      parameters:
+        - name: IdCompany
+          in: path
+          description: Id of company 
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: successful operation
+        '400':
+          description: bad request 
+        '404':
+          description: not found
+          
+    put:
+      tags:
+        - companies
+      summary: Update an existing company
+      description: Update an existing company
+      parameters:
+        - name: IdCompany
+          in: path
+          description: Id of company 
+          required: true
+          schema:
+            type: integer  
+      requestBody:
+        description: Update an existing company 
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompanyRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompanyResponse'          
+        '400':
+          description: bad request 
+        '404':
+          description: not found
+
+          
+  /companies/{IdCompany}/sensors/:
+    get:
+      tags:
+        - companies
+        - sensors
+      description : Get company's sensors
+      parameters:
+        - name: IdCompany
+          in: path
+          description: ID of company
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SensorResponse'          
+        '400':
+          description: bad request         
+        '404':
+          description: Not found
+    post:
+      tags:
+        - companies
+        - sensors
+      summary: Create a sensor for a company 
+      description: Create a sensor for a company  
+      parameters:
+        - name: IdCompany
+          in: path
+          description: ID of company
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        description: Create a sensor for a company 
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SensorCreateRequest'
+        required: true
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SensorResponse'          
+        '400':
+          description: bad request      
+        '404':
+          description: Not found     
+          
+  /companies/{IdCompany}/sensors/{IdSensor}/:
+    get:
+      tags:
+        - companies
+        - sensors
+      description : Get a sensor of a company 
+      summary: Get a sensor of a company 
+      parameters:
+        - name: IdCompany
+          in: path
+          description: Id of company
+          required: true
+          schema:
+            type: integer
+        - name: IdSensor
+          in: path
+          description: Id of sensor
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SensorResponse'    
+        '400':
+          description: bad request   
+        '404':
+          description: Not found
+    delete:
+      tags:
+        - companies
+        - sensors
+      parameters:
+        - name: IdCompany
+          in: path
+          description: Id of company 
+          required: true
+          schema:
+            type: integer
+        - name: IdSensor
+          in: path
+          description: ID of sensor
+          required: true
+          schema:
+            type: string  
+      responses:
+        '204':
+          description: Successful operation (No Content)
+        '400':
+          description: bad request   
+        '404':
+          description: Not found      
+    put:
+      tags:
+        - companies
+        - sensors
+      summary: Update an existing company's sensor
+      description: Update an existing company's sensor 
+      parameters:
+        - name: IdCompany
+          in: path
+          description: ID of company
+          required: true
+          schema:
+            type: integer
+        - name: IdSensor
+          in: path
+          description: ID of sensor
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Update an existent company's sensor
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SensorUpdateRequest'
+
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SensorResponse'          
+
+        '400':
+          description: bad request   
+        '404':
+          description: not found
+          
+  /sensors/search/:
+    get:
+      tags:
+        - sensors
+      parameters:
+        - name: company
+          in: query
+          description: ID of company 
+          required: false
+          schema:
+            example : 1
+            type: integer
+        - name: labels
+          in: query
+          description: list of labels
+          required: false
+          schema:
+            type: array
+            items:
+              example : label01
+              type: string  
+              
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Sensors'          
+        '400':
+          description: bad request   
+
+  /sensors/{IdSensor}/measurements/:
+    post:
+      tags:
+        - measurements
+        - sensors
+      summary: Create a Measurement for a Sensor
+      description: Create a Measurement for a Sensor.
+      parameters:
+        - name: IdSensor
+          in: path
+          description: ID of sensor
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Create a new company's sensor
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MeasurementRequest'
+        required: true
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MeasurementResponse'          
+        '400':
+          description: bad request   
+
+  /measurements/search/:
+    get:
+      tags:
+        - measurements
+      parameters:
+        - name: sensor
+          in: query
+          description: ID of sensor 
+          required: false
+          schema:
+            type: string  
+            example : 'sens01'
+        - name: company
+          in: query
+          description: ID of company 
+          required: false
+          schema:
+            type: integer
+            example : 1
+        - name: date_before
+          in: query
+          description: ending date
+          required: false
+          schema:
+            type: string
+            format: date-time
+            example: '2022-10-24'
+        - name: date_after
+          in: query
+          description: stating date
+          required: false
+          schema:
+            type: string
+            format: date-time
+            example: '2022-10-21'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Measurements'          
+        '400':
+          description: bad request   
+          
+          
+components:
+  schemas:
+    CompanyRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          example: 'assisMe'
+          description: company name
+        location:
+          type: string
+          example: 'berlin'
+          description: company location  
+          
+    CompanyResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: 'assisMe'
+          description: company name
+        location:
+          type: string
+          example: 'berlin'
+          description: company location  
+    SensorCreateRequest:
+      type: object
+      properties:
+        sensorId:
+          type: string
+          example: 'sens01'
+        active:
+          type: boolean
+          example: false
+        labels:
+          type: array
+          example: ["label01","label02"]
+          items:
+            type: string      
+    SensorUpdateRequest:
+      type: object
+      properties:
+        active:
+          type: boolean
+          example: false
+        labels:
+          type: array
+          example: ["label01","label02"]
+          items:
+            type: string
+ 
+    SensorResponse:
+        type: object
+        properties:
+          sensorId:
+            type: string
+            example: 'sensor0120'
+          active:
+            type: boolean
+            example: false
+          labels:
+            type: array
+            example: ["label01","label02"]
+            items:
+              type: string
+          company:
+            type: integer
+            example: 3   
+    MeasurementRequest:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date-time
+        value:
+          type: object
+          example:
+                {
+                  "temperature": [20, 38],
+                  "rssi": [0, 45],
+                  "humidity": [0, 100],
+                }
+                
+    MeasurementResponse:
+      type: object
+      properties:
+        id :
+          type: integer
+          example: 20
+        sensorId:
+          type: string
+          example: 'sensor0120'         
+        date:
+          type: string
+          format: date-time
+        value:
+          type: object
+          example:
+                {
+                  "temperature": [20, 38],
+                  "rssi": [0, 45],
+                  "humidity": [0, 100],
+                }        
+    Companies:
+      type: object
+      properties:
+        data:
+          type: array
+          items: 
+            $ref: "#/components/schemas/CompanyResponse"
+        errors:
+          type: object
+            
+    Sensors:
+    
+      type: object
+      properties:
+        data:
+          type: array
+          items: 
+            $ref: "#/components/schemas/SensorResponse"
+        errors:
+          type: object
+          
+          
+    Measurements:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            count: 
+              type: integer
+            next:
+              type: string
+            previous:
+              type: string
+            results:
+              type: array
+              items: 
+                $ref: "#/components/schemas/MeasurementResponse"
+        errors:
+          type: object

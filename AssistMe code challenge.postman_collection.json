@@ -1,0 +1,1944 @@
+{
+	"info": {
+		"_postman_id": "65fef9cc-9cea-42ab-b27f-48e6dca7da94",
+		"name": "AssistMe code challenge",
+		"description": "This is the openapi doc for AssistMe code challenge Rest api\n\nContact Support:\n Email: houda.mallem@gmail.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4794125"
+	},
+	"item": [
+		{
+			"name": "companies",
+			"item": [
+				{
+					"name": "{Id Company}",
+					"item": [
+						{
+							"name": "sensors",
+							"item": [
+								{
+									"name": "{Id Sensor}",
+									"item": [
+										{
+											"name": "Get a sensor of a company",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/companies/:IdCompany/sensors/:IdSensor/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"companies",
+														":IdCompany",
+														"sensors",
+														":IdSensor",
+														""
+													],
+													"variable": [
+														{
+															"key": "IdCompany",
+															"value": "76589926",
+															"description": "(Required) Id of company"
+														},
+														{
+															"key": "IdSensor",
+															"value": "eu ut consectetur",
+															"description": "(Required) Id of sensor"
+														}
+													]
+												},
+												"description": "Get a sensor of a company"
+											},
+											"response": [
+												{
+													"name": "Successful operation",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/companies/:IdCompany/sensors/:IdSensor/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"companies",
+																":IdCompany",
+																"sensors",
+																":IdSensor",
+																""
+															],
+															"variable": [
+																{
+																	"key": "IdCompany",
+																	"value": "76589926",
+																	"description": "(Required) Id of company"
+																},
+																{
+																	"key": "IdSensor",
+																	"value": "eu ut consectetur",
+																	"description": "(Required) Id of sensor"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"sensorId\": \"sensor0120\",\n  \"active\": false,\n  \"labels\": [\n    \"label01\",\n    \"label02\"\n  ],\n  \"company\": 3\n}"
+												},
+												{
+													"name": "bad request",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/companies/:IdCompany/sensors/:IdSensor/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"companies",
+																":IdCompany",
+																"sensors",
+																":IdSensor",
+																""
+															],
+															"variable": [
+																{
+																	"key": "IdCompany",
+																	"value": "76589926",
+																	"description": "(Required) Id of company"
+																},
+																{
+																	"key": "IdSensor",
+																	"value": "eu ut consectetur",
+																	"description": "(Required) Id of sensor"
+																}
+															]
+														}
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "Not found",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/companies/:IdCompany/sensors/:IdSensor/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"companies",
+																":IdCompany",
+																"sensors",
+																":IdSensor",
+																""
+															],
+															"variable": [
+																{
+																	"key": "IdCompany",
+																	"value": "76589926",
+																	"description": "(Required) Id of company"
+																},
+																{
+																	"key": "IdSensor",
+																	"value": "eu ut consectetur",
+																	"description": "(Required) Id of sensor"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "/companies/:IdCompany/sensors/:IdSensor/",
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/companies/:IdCompany/sensors/:IdSensor/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"companies",
+														":IdCompany",
+														"sensors",
+														":IdSensor",
+														""
+													],
+													"variable": [
+														{
+															"key": "IdCompany",
+															"value": "76589926",
+															"description": "(Required) Id of company"
+														},
+														{
+															"key": "IdSensor",
+															"value": "eu ut consectetur",
+															"description": "(Required) ID of sensor"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Successful operation (No Content)",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/companies/:IdCompany/sensors/:IdSensor/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"companies",
+																":IdCompany",
+																"sensors",
+																":IdSensor",
+																""
+															],
+															"variable": [
+																{
+																	"key": "IdCompany",
+																	"value": "76589926",
+																	"description": "(Required) Id of company"
+																},
+																{
+																	"key": "IdSensor",
+																	"value": "eu ut consectetur",
+																	"description": "(Required) ID of sensor"
+																}
+															]
+														}
+													},
+													"status": "No Content",
+													"code": 204,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "bad request",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/companies/:IdCompany/sensors/:IdSensor/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"companies",
+																":IdCompany",
+																"sensors",
+																":IdSensor",
+																""
+															],
+															"variable": [
+																{
+																	"key": "IdCompany",
+																	"value": "76589926",
+																	"description": "(Required) Id of company"
+																},
+																{
+																	"key": "IdSensor",
+																	"value": "eu ut consectetur",
+																	"description": "(Required) ID of sensor"
+																}
+															]
+														}
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "Not found",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/companies/:IdCompany/sensors/:IdSensor/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"companies",
+																":IdCompany",
+																"sensors",
+																":IdSensor",
+																""
+															],
+															"variable": [
+																{
+																	"key": "IdCompany",
+																	"value": "76589926",
+																	"description": "(Required) Id of company"
+																},
+																{
+																	"key": "IdSensor",
+																	"value": "eu ut consectetur",
+																	"description": "(Required) ID of sensor"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Update an existing company's sensor",
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"active\": false,\n  \"labels\": [\n    \"label01\",\n    \"label02\"\n  ]\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/companies/:IdCompany/sensors/:IdSensor/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"companies",
+														":IdCompany",
+														"sensors",
+														":IdSensor",
+														""
+													],
+													"variable": [
+														{
+															"key": "IdCompany",
+															"value": "76589926",
+															"description": "(Required) ID of company"
+														},
+														{
+															"key": "IdSensor",
+															"value": "eu ut consectetur",
+															"description": "(Required) ID of sensor"
+														}
+													]
+												},
+												"description": "Update an existing company's sensor"
+											},
+											"response": [
+												{
+													"name": "Successful operation",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"active\": false,\n  \"labels\": [\n    \"label01\",\n    \"label02\"\n  ]\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/companies/:IdCompany/sensors/:IdSensor/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"companies",
+																":IdCompany",
+																"sensors",
+																":IdSensor",
+																""
+															],
+															"variable": [
+																{
+																	"key": "IdCompany",
+																	"value": "76589926",
+																	"description": "(Required) ID of company"
+																},
+																{
+																	"key": "IdSensor",
+																	"value": "eu ut consectetur",
+																	"description": "(Required) ID of sensor"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"sensorId\": \"sensor0120\",\n  \"active\": false,\n  \"labels\": [\n    \"label01\",\n    \"label02\"\n  ],\n  \"company\": 3\n}"
+												},
+												{
+													"name": "bad request",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"active\": false,\n  \"labels\": [\n    \"label01\",\n    \"label02\"\n  ]\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/companies/:IdCompany/sensors/:IdSensor/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"companies",
+																":IdCompany",
+																"sensors",
+																":IdSensor",
+																""
+															],
+															"variable": [
+																{
+																	"key": "IdCompany",
+																	"value": "76589926",
+																	"description": "(Required) ID of company"
+																},
+																{
+																	"key": "IdSensor",
+																	"value": "eu ut consectetur",
+																	"description": "(Required) ID of sensor"
+																}
+															]
+														}
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "not found",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"active\": false,\n  \"labels\": [\n    \"label01\",\n    \"label02\"\n  ]\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/companies/:IdCompany/sensors/:IdSensor/",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"companies",
+																":IdCompany",
+																"sensors",
+																":IdSensor",
+																""
+															],
+															"variable": [
+																{
+																	"key": "IdCompany",
+																	"value": "76589926",
+																	"description": "(Required) ID of company"
+																},
+																{
+																	"key": "IdSensor",
+																	"value": "eu ut consectetur",
+																	"description": "(Required) ID of sensor"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "/companies/:IdCompany/sensors/",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/companies/:IdCompany/sensors/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"companies",
+												":IdCompany",
+												"sensors",
+												""
+											],
+											"variable": [
+												{
+													"key": "IdCompany",
+													"value": "76589926",
+													"description": "(Required) ID of company"
+												}
+											]
+										},
+										"description": "Get company's sensors"
+									},
+									"response": [
+										{
+											"name": "Successful operation",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/companies/:IdCompany/sensors/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"companies",
+														":IdCompany",
+														"sensors",
+														""
+													],
+													"variable": [
+														{
+															"key": "IdCompany",
+															"value": "76589926",
+															"description": "(Required) ID of company"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"sensorId\": \"sensor0120\",\n  \"active\": false,\n  \"labels\": [\n    \"label01\",\n    \"label02\"\n  ],\n  \"company\": 3\n}"
+										},
+										{
+											"name": "bad request",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/companies/:IdCompany/sensors/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"companies",
+														":IdCompany",
+														"sensors",
+														""
+													],
+													"variable": [
+														{
+															"key": "IdCompany",
+															"value": "76589926",
+															"description": "(Required) ID of company"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/companies/:IdCompany/sensors/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"companies",
+														":IdCompany",
+														"sensors",
+														""
+													],
+													"variable": [
+														{
+															"key": "IdCompany",
+															"value": "76589926",
+															"description": "(Required) ID of company"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Create a sensor for a company",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"sensorId\": \"sens01\",\n  \"active\": false,\n  \"labels\": [\n    \"label01\",\n    \"label02\"\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/companies/:IdCompany/sensors/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"companies",
+												":IdCompany",
+												"sensors",
+												""
+											],
+											"variable": [
+												{
+													"key": "IdCompany",
+													"value": "76589926",
+													"description": "(Required) ID of company"
+												}
+											]
+										},
+										"description": "Create a sensor for a company"
+									},
+									"response": [
+										{
+											"name": "Successful operation",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"sensorId\": \"sens01\",\n  \"active\": false,\n  \"labels\": [\n    \"label01\",\n    \"label02\"\n  ]\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/companies/:IdCompany/sensors/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"companies",
+														":IdCompany",
+														"sensors",
+														""
+													],
+													"variable": [
+														{
+															"key": "IdCompany",
+															"value": "76589926",
+															"description": "(Required) ID of company"
+														}
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"sensorId\": \"sensor0120\",\n  \"active\": false,\n  \"labels\": [\n    \"label01\",\n    \"label02\"\n  ],\n  \"company\": 3\n}"
+										},
+										{
+											"name": "bad request",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"sensorId\": \"sens01\",\n  \"active\": false,\n  \"labels\": [\n    \"label01\",\n    \"label02\"\n  ]\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/companies/:IdCompany/sensors/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"companies",
+														":IdCompany",
+														"sensors",
+														""
+													],
+													"variable": [
+														{
+															"key": "IdCompany",
+															"value": "76589926",
+															"description": "(Required) ID of company"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Not found",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"sensorId\": \"sens01\",\n  \"active\": false,\n  \"labels\": [\n    \"label01\",\n    \"label02\"\n  ]\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/companies/:IdCompany/sensors/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"companies",
+														":IdCompany",
+														"sensors",
+														""
+													],
+													"variable": [
+														{
+															"key": "IdCompany",
+															"value": "76589926",
+															"description": "(Required) ID of company"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/companies/:IdCompany/",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/companies/:IdCompany/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"companies",
+										":IdCompany",
+										""
+									],
+									"variable": [
+										{
+											"key": "IdCompany",
+											"value": "76589926",
+											"description": "(Required) ID of company to return"
+										}
+									]
+								},
+								"description": "get one company by id"
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/companies/:IdCompany/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"companies",
+												":IdCompany",
+												""
+											],
+											"variable": [
+												{
+													"key": "IdCompany",
+													"value": "76589926",
+													"description": "(Required) ID of company to return"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 1,\n  \"name\": \"assisMe\",\n  \"location\": \"berlin\"\n}"
+								},
+								{
+									"name": "bad request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/companies/:IdCompany/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"companies",
+												":IdCompany",
+												""
+											],
+											"variable": [
+												{
+													"key": "IdCompany",
+													"value": "76589926",
+													"description": "(Required) ID of company to return"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/companies/:IdCompany/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"companies",
+												":IdCompany",
+												""
+											],
+											"variable": [
+												{
+													"key": "IdCompany",
+													"value": "76589926",
+													"description": "(Required) ID of company to return"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/companies/:IdCompany/",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/companies/:IdCompany/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"companies",
+										":IdCompany",
+										""
+									],
+									"variable": [
+										{
+											"key": "IdCompany",
+											"value": "76589926",
+											"description": "(Required) Id of company"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/companies/:IdCompany/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"companies",
+												":IdCompany",
+												""
+											],
+											"variable": [
+												{
+													"key": "IdCompany",
+													"value": "76589926",
+													"description": "(Required) Id of company"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "bad request",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/companies/:IdCompany/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"companies",
+												":IdCompany",
+												""
+											],
+											"variable": [
+												{
+													"key": "IdCompany",
+													"value": "76589926",
+													"description": "(Required) Id of company"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "not found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/companies/:IdCompany/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"companies",
+												":IdCompany",
+												""
+											],
+											"variable": [
+												{
+													"key": "IdCompany",
+													"value": "76589926",
+													"description": "(Required) Id of company"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Update an existing company",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"assisMe\",\n  \"location\": \"berlin\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/companies/:IdCompany/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"companies",
+										":IdCompany",
+										""
+									],
+									"variable": [
+										{
+											"key": "IdCompany",
+											"value": "76589926",
+											"description": "(Required) Id of company"
+										}
+									]
+								},
+								"description": "Update an existing company"
+							},
+							"response": [
+								{
+									"name": "Successful operation",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"assisMe\",\n  \"location\": \"berlin\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/companies/:IdCompany/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"companies",
+												":IdCompany",
+												""
+											],
+											"variable": [
+												{
+													"key": "IdCompany",
+													"value": "76589926",
+													"description": "(Required) Id of company"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 1,\n  \"name\": \"assisMe\",\n  \"location\": \"berlin\"\n}"
+								},
+								{
+									"name": "bad request",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"assisMe\",\n  \"location\": \"berlin\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/companies/:IdCompany/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"companies",
+												":IdCompany",
+												""
+											],
+											"variable": [
+												{
+													"key": "IdCompany",
+													"value": "76589926",
+													"description": "(Required) Id of company"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "not found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"assisMe\",\n  \"location\": \"berlin\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/companies/:IdCompany/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"companies",
+												":IdCompany",
+												""
+											],
+											"variable": [
+												{
+													"key": "IdCompany",
+													"value": "76589926",
+													"description": "(Required) Id of company"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "/companies/",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/companies/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"companies",
+								""
+							]
+						},
+						"description": "Get all companies"
+					},
+					"response": [
+						{
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/companies/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"companies",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": [\n    {\n      \"id\": 1,\n      \"name\": \"assisMe\",\n      \"location\": \"berlin\"\n    },\n    {\n      \"id\": 1,\n      \"name\": \"assisMe\",\n      \"location\": \"berlin\"\n    }\n  ],\n  \"errors\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "Create a company",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"assisMe\",\n  \"location\": \"berlin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/companies/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"companies",
+								""
+							]
+						},
+						"description": "Create a company"
+					},
+					"response": [
+						{
+							"name": "Companay has been created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"assisMe\",\n  \"location\": \"berlin\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/companies/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"companies",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": 1,\n  \"name\": \"assisMe\",\n  \"location\": \"berlin\"\n}"
+						},
+						{
+							"name": "bad request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"assisMe\",\n  \"location\": \"berlin\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/companies/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"companies",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "sensors",
+			"item": [
+				{
+					"name": "/sensors/search/",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/sensors/search/?company=1&labels=label01&labels=label01",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sensors",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "company",
+									"value": "1",
+									"description": "ID of company"
+								},
+								{
+									"key": "labels",
+									"value": "label01",
+									"description": "list of labels"
+								},
+								{
+									"key": "labels",
+									"value": "label01",
+									"description": "list of labels"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/sensors/search/?company=1&labels=label01&labels=label01",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sensors",
+										"search",
+										""
+									],
+									"query": [
+										{
+											"key": "company",
+											"value": "1"
+										},
+										{
+											"key": "labels",
+											"value": "label01"
+										},
+										{
+											"key": "labels",
+											"value": "label01"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data\": [\n    {\n      \"sensorId\": \"sensor0120\",\n      \"active\": false,\n      \"labels\": [\n        \"label01\",\n        \"label02\"\n      ],\n      \"company\": 3\n    },\n    {\n      \"sensorId\": \"sensor0120\",\n      \"active\": false,\n      \"labels\": [\n        \"label01\",\n        \"label02\"\n      ],\n      \"company\": 3\n    }\n  ],\n  \"errors\": {}\n}"
+						},
+						{
+							"name": "bad request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/sensors/search/?company=1&labels=label01&labels=label01",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sensors",
+										"search",
+										""
+									],
+									"query": [
+										{
+											"key": "company",
+											"value": "1"
+										},
+										{
+											"key": "labels",
+											"value": "label01"
+										},
+										{
+											"key": "labels",
+											"value": "label01"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Create a Measurement for a Sensor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"date\": \"1985-01-18T02:50:24.616Z\",\n  \"value\": {\n    \"temperature\": [\n      20,\n      38\n    ],\n    \"rssi\": [\n      0,\n      45\n    ],\n    \"humidity\": [\n      0,\n      100\n    ]\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/sensors/:IdSensor/measurements/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sensors",
+								":IdSensor",
+								"measurements",
+								""
+							],
+							"variable": [
+								{
+									"key": "IdSensor",
+									"value": "eu ut consectetur",
+									"description": "(Required) ID of sensor"
+								}
+							]
+						},
+						"description": "Create a Measurement for a Sensor."
+					},
+					"response": [
+						{
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"date\": \"1985-01-18T02:50:24.616Z\",\n  \"value\": {\n    \"temperature\": [\n      20,\n      38\n    ],\n    \"rssi\": [\n      0,\n      45\n    ],\n    \"humidity\": [\n      0,\n      100\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sensors/:IdSensor/measurements/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sensors",
+										":IdSensor",
+										"measurements",
+										""
+									],
+									"variable": [
+										{
+											"key": "IdSensor",
+											"value": "eu ut consectetur",
+											"description": "(Required) ID of sensor"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": 20,\n  \"sensorId\": \"sensor0120\",\n  \"date\": \"2017-05-07T06:26:10.900Z\",\n  \"value\": {\n    \"temperature\": [\n      20,\n      38\n    ],\n    \"rssi\": [\n      0,\n      45\n    ],\n    \"humidity\": [\n      0,\n      100\n    ]\n  }\n}"
+						},
+						{
+							"name": "bad request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"date\": \"1985-01-18T02:50:24.616Z\",\n  \"value\": {\n    \"temperature\": [\n      20,\n      38\n    ],\n    \"rssi\": [\n      0,\n      45\n    ],\n    \"humidity\": [\n      0,\n      100\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sensors/:IdSensor/measurements/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sensors",
+										":IdSensor",
+										"measurements",
+										""
+									],
+									"variable": [
+										{
+											"key": "IdSensor",
+											"value": "eu ut consectetur",
+											"description": "(Required) ID of sensor"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "/measurements/search/",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/measurements/search/?sensor=sens01&company=1&date_before=2022-05-02T16:02:30.252Z&date_after=1943-09-20T04:03:23.275Z",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"measurements",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "sensor",
+							"value": "sens01",
+							"description": "ID of sensor"
+						},
+						{
+							"key": "company",
+							"value": "1",
+							"description": "ID of company"
+						},
+						{
+							"key": "date_before",
+							"value": "2022-05-02T16:02:30.252Z",
+							"description": "ending date"
+						},
+						{
+							"key": "date_after",
+							"value": "1943-09-20T04:03:23.275Z",
+							"description": "stating date"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Successful operation",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/measurements/search/?sensor=sens01&company=1&date_before=2022-05-02T16:02:30.252Z&date_after=1943-09-20T04:03:23.275Z",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"measurements",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "sensor",
+									"value": "sens01"
+								},
+								{
+									"key": "company",
+									"value": "1"
+								},
+								{
+									"key": "date_before",
+									"value": "2022-05-02T16:02:30.252Z"
+								},
+								{
+									"key": "date_after",
+									"value": "1943-09-20T04:03:23.275Z"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"data\": {\n    \"count\": 77235402,\n    \"next\": \"enim magna aliquip\",\n    \"previous\": \"aliquip ipsum sit\",\n    \"results\": [\n      {\n        \"id\": 20,\n        \"sensorId\": \"sensor0120\",\n        \"date\": \"1982-10-08T20:48:59.221Z\",\n        \"value\": {\n          \"temperature\": [\n            20,\n            38\n          ],\n          \"rssi\": [\n            0,\n            45\n          ],\n          \"humidity\": [\n            0,\n            100\n          ]\n        }\n      },\n      {\n        \"id\": 20,\n        \"sensorId\": \"sensor0120\",\n        \"date\": \"1948-11-06T23:13:44.713Z\",\n        \"value\": {\n          \"temperature\": [\n            20,\n            38\n          ],\n          \"rssi\": [\n            0,\n            45\n          ],\n          \"humidity\": [\n            0,\n            100\n          ]\n        }\n      }\n    ]\n  },\n  \"errors\": {}\n}"
+				},
+				{
+					"name": "bad request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/measurements/search/?sensor=sens01&company=1&date_before=2022-05-02T16:02:30.252Z&date_after=1943-09-20T04:03:23.275Z",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"measurements",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "sensor",
+									"value": "sens01"
+								},
+								{
+									"key": "company",
+									"value": "1"
+								},
+								{
+									"key": "date_before",
+									"value": "2022-05-02T16:02:30.252Z"
+								},
+								{
+									"key": "date_after",
+									"value": "1943-09-20T04:03:23.275Z"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8001/api/v1",
+			"type": "string"
+		}
+	]
+}

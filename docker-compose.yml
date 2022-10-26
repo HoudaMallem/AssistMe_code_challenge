@@ -1,0 +1,33 @@
+version: '3'
+services:
+  assistme-dev-db:
+    container_name: assistme-dev-db
+    image: postgres:14
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=mysupersecretpassword
+    volumes:
+      - assistme-dev-postgres-data:/var/lib/postgresql/data
+    #ports:
+      #- "5433:5432"
+  assistme-dev-web:
+    container_name: assistme-dev-web
+    environment:
+     - ENV=dev
+     - DEBUG=False
+     - DB_HOST=assistme-dev-db
+     - DB_NAME=postgres
+     - DB_USER=postgres
+     - DB_PASSWORD=mysupersecretpassword
+     - DB_PORT=5432
+    build: .
+    command: python manage.py runserver 0.0.0.0:8001
+    volumes:
+      - .:/code
+    ports:
+      - "8001:8001"
+    depends_on:
+      - assistme-dev-db
+volumes:
+  assistme-dev-postgres-data:
