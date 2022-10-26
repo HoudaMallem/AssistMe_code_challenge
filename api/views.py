@@ -33,7 +33,6 @@ class SensorViewSet(viewsets.ModelViewSet):
         if "pk" in self.kwargs:
             more_context["pk"] = self.kwargs.get("pk")
         context.update(more_context)
-        print("context", context)
         return context
 
     def get_queryset(self, *args, **kwargs):
@@ -57,7 +56,6 @@ class SensorRetrieveAPIView(generics.ListAPIView):
         if not labels:
             return self.queryset
         labels = labels.split(',')
-        print(self.request.GET.get("labels", None), labels)
         return self.queryset.filter(labels__contains=labels)
 
 

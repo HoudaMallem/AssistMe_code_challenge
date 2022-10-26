@@ -23,7 +23,6 @@ class SensorViewSetSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         company = self.get_object_company()
         validated_data['company'] = company
-        print(validated_data)
         return super().create(validated_data)
 
     def update(self, instance, validated_data):
